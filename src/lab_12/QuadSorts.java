@@ -33,22 +33,39 @@ public class QuadSorts {
 		for(int i = 0; i<arr.length; i ++) {
 			newar[i] = 0;
 		}
-		newar[0] = arr[0];
-		for(int i = 1; i < arr.length; i ++) {
-			for(int j = i; j < arr.length; j ++) {
-				if(arr[j] <= newar[0]) {
-//					int temp = newar[0];
-//					newar[0] = arr[j];
-					for(int k = 0; k < arr.length; k ++) {
-						//I think put the loops for each inside of ifs for up or down
+		newar[0]  = arr[0];
+		for(int i = 0; i < arr.length; i ++) {
+			for(int j = 0; j < newar.length; j++) {
+				for(int k = 0; k <1; k++) {
+					if(arr[i] <= newar[j]) { //I think maybe change this.
+						int temp = arr[i];
+						arr[i] = newar[k];
+						newar[k] = temp; 
 					}
-				}
-				else if(arr[j] > newar[0]) {
-					
+//					else if(arr[i] > newar[j]) { 
+//						int temp = arr[i];
+//						arr[i] = newar[k];
+//						newar[k] = temp; 
+//					}
 				}
 			}
 		}
-		return arr;
+//		newar[0] = arr[0];
+//		for(int i = 1; i < arr.length; i ++) {
+//			for(int j = i; j < arr.length; j ++) {
+//				if(arr[j] <= newar[0]) {
+////					int temp = newar[0]; 
+////					newar[0] = arr[j];
+//					for(int k = 0; k < arr.length; k ++) {
+//						//I think put the loops for each inside of ifs for up or down
+//					}
+//				}
+//				else if(arr[j] > newar[0]) {
+//					
+//				}
+//			}
+//		}
+		return newar;
 	}
 //	public static int[] mergeSort(int[] arr) {
 //		
