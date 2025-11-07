@@ -22,14 +22,14 @@ public class SortingTester {
 		for(int n: nums2) {
 			System.out.println(n);
 		}
-		int[] nums3 = {4, 5, 7, 2, 1};
+		int[] nums3 = {8,3,2,5,1};
 		System.out.println("Insertion Sort");
 
 		for(int n: nums3) {
 			System.out.println(n);
 		}
 		System.out.println();
-		QuadSorts.insertionSort(nums3);
+		nums3 = QuadSorts.insertionSort(nums3);
 		for(int n: nums3) {
 			System.out.println(n);
 		}

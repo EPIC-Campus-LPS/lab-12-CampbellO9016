@@ -31,43 +31,55 @@ public class QuadSorts {
 	public static int[] insertionSort(int[] arr) {
 		int[] newar = new int[arr.length];
 		for(int i = 0; i<arr.length; i ++) {
-			newar[i] = 0;
+			newar[i] = Integer.MAX_VALUE;
 		}
 		newar[0]  = arr[0];
-		for(int i = 0; i < arr.length; i ++) {
-			for(int j = 0; j < newar.length; j++) {
-				for(int k = 0; k <1; k++) {
-					if(arr[i] <= newar[j]) { //I think maybe change this.
-						int temp = arr[i];
-						arr[i] = newar[k];
-						newar[k] = temp; 
+		
+		int temp2 = 0;
+		for(int i = 1; i < arr.length; i ++) {
+			int temp = arr[i];
+			for(int j = 0; j < arr.length; j++) {
+					if(temp <= newar[j]) { 										
+						if(j == arr.length-1) {
+							newar[j] = temp;
+						}
+						temp2 = newar[j];
+						newar[j] = temp;
+						temp = temp2;
 					}
-//					else if(arr[i] > newar[j]) { 
-//						int temp = arr[i];
-//						arr[i] = newar[k];
-//						newar[k] = temp; 
-//					}
-				}
+					else if(temp> newar[j]&& newar[j] != 0)  {	
+						continue;
+					}
+					else {
+						newar[j] = temp;
+					}
 			}
 		}
-//		newar[0] = arr[0];
-//		for(int i = 1; i < arr.length; i ++) {
-//			for(int j = i; j < arr.length; j ++) {
-//				if(arr[j] <= newar[0]) {
-////					int temp = newar[0]; 
-////					newar[0] = arr[j];
-//					for(int k = 0; k < arr.length; k ++) {
-//						//I think put the loops for each inside of ifs for up or down
-//					}
-//				}
-//				else if(arr[j] > newar[0]) {
-//					
-//				}
-//			}
-//		}
 		return newar;
 	}
-//	public static int[] mergeSort(int[] arr) {
-//		
-//	}
+	public static int[] mergeSort(int[] arr) {
+		if(arr.length == 1) {
+			return arr;
+		}
+		int len = arr.length;	
+		int n[] = new int[len/2];
+		int n2[] = new int[len/2 - len];
+		int count = 0;
+		for(int i = 0; i < n.length; i ++) {
+			n[i] = arr[i];
+			count++;
+		}
+		for(int i = 0; i < n2.length; i ++) {
+			n2[i] = arr[count];
+		}
+		n = mergeSort(n);
+		n2 = mergeSort(n2);
+		int n3[] = new int[len];
+		if() {
+			
+		}
+		return 
+		
+	}
 }
+
