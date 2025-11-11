@@ -33,16 +33,16 @@ public class SortingTester {
 		for(int n: nums3) {
 			System.out.println(n);
 		}
-//		int[] nums4 = {4, 5, 7, 2, 1};
-//		System.out.println("Merge Sort");
-//		for(int n: nums4) {
-//			System.out.println(n);
-//		}
-//		System.out.println();
-//		QuadSorts.insertionSort(nums4);
-//		for(int n: nums4) {
-//			System.out.println(n);
-//		}
+		int[] nums4 = {4, 5, 7, 2, 1};
+		System.out.println("Merge Sort");
+		for(int n: nums4) {
+			System.out.println(n);
+		}
+		System.out.println();
+		QuadSorts.mergeSort(nums4);
+		for(int n: nums4) {
+			System.out.println(n);
+		}
 		
 	}
 
