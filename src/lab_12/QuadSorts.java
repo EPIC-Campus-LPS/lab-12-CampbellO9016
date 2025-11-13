@@ -61,25 +61,41 @@ public class QuadSorts {
 		if(arr.length == 1) {
 			return arr;
 		}
+		int count2 = 0;
 		int len = arr.length;	
 		int n[] = new int[len/2];
-		int n2[] = new int[len/2 - len];
+		int n2[] = new int[len/2];
 		int count = 0;
 		for(int i = 0; i < n.length; i ++) {
 			n[i] = arr[i];
 			count++;
 		}
 		for(int i = 0; i < n2.length; i ++) {
-			n2[i] = arr[count];
+			n2[i] = arr[count +i];
 		}
+		count2 ++;
 		n = mergeSort(n);
 		n2 = mergeSort(n2);
 		int n3[] = new int[len];
-		if() {
-			
+		int count1 = 0;
+		int j = 0;
+		int k = 0;
+		for(int i = 0; i < arr.length; i ++) {
+			if(n2[j] < n[k]) {
+				arr[count1] = n2[j];
+				j++;
+			}
+			else if(n[k] <n[j]) {
+				arr[count1] = n[k];
+				k++;
+			}
+					
 		}
-		return 
-		
+		System.out.println("c" +count2);
+		return arr;
 	}
+		
+		
 }
+
 
