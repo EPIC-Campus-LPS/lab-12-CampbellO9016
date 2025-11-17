@@ -80,13 +80,13 @@ public class QuadSorts {
 		int count1 = 0;
 		int j = 0;
 		int k = 0;
-		for(int i = 0; i < arr.length; i ++) {
+		for(int i = 0; i < n3.length - 1; i ++) {
 			if(n2[j] < n[k]) {
-				arr[count1] = n2[j];
+				n3[count1] = n2[j];
 				j++;
 			}
 			else if(n[k] <n[j]) {
-				arr[count1] = n[k];
+				n3[count1] = n[k];
 				k++;
 			}
 					
