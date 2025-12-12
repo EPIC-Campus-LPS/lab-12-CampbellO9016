@@ -58,41 +58,47 @@ public class QuadSorts {
 		return newar;
 	}
 	public static int[] mergeSort(int[] arr) {
-		if(arr.length == 1) {
+		if(arr.length <= 1) {
 			return arr;
 		}
 		int count2 = 0;
-		int len = arr.length;	
-		int n[] = new int[len/2];
-		int n2[] = new int[len/2];
+		int middle = arr.length /2;	
+		int[] left = new int[middle];
+		int[] right = new int[arr.length - middle];
 		int count = 0;
-		for(int i = 0; i < n.length; i ++) {
-			n[i] = arr[i];
+		for(int i = 0; i < middle; i ++) {
+			left[i] = arr[i];
 			count++;
 		}
-		for(int i = 0; i < n2.length; i ++) {
-			n2[i] = arr[count +i];
+		for(int i = middle; i < arr.length; i ++) {
+			right[i-middle] = arr[i];
 		}
 		count2 ++;
-		n = mergeSort(n);
-		n2 = mergeSort(n2);
-		int n3[] = new int[len];
-		int count1 = 0;
+		left = mergeSort(left);
+		right = mergeSort(right);
+		
+		return QuadSorts.merge(left, right);
+	}
+	public static int[] merge(int[] left, int[] right) {
+		int[] result = new int[left.length +right.length];
+		int i = 0;
 		int j = 0;
 		int k = 0;
-		for(int i = 0; i < n3.length - 1; i ++) {
-			if(n2[j] < n[k]) {
-				n3[count1] = n2[j];
-				j++;
+		while(i < left.length && j < right.length) {
+			if(left[i] < right[j]) {
+				result[k++] = left[i++];
 			}
-			else if(n[k] <n[j]) {
-				n3[count1] = n[k];
-				k++;
-			}
-					
+			else {
+				result[k++] = right[j++];
+			}			
 		}
-		System.out.println("c" +count2);
-		return arr;
+		while(i < left.length) {
+			result[k++] = left[i++];
+		}
+		while(j< right.length) {
+			result[k++] = right[j++];
+		}
+		return result;
 	}
 		
 		
